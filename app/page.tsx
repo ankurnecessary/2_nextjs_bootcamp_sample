@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import Link from "next/link";
-import DeleteUserButton from "./deleteUserButton";
+import DeleteUserButton from "./components/deleteUserButton";
 
 export default async function Home() {
   const prisma = new PrismaClient();

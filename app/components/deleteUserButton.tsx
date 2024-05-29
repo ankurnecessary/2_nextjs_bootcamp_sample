@@ -1,4 +1,4 @@
-import { deleteUser } from "./actions";
+import { deleteUser } from "../actions";
 
 const DeleteUserButton = ({userId}:{userId: number}) => {
   return (

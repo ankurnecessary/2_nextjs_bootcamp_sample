@@ -12,7 +12,7 @@ export default async function Home() {
           href="/addUser"
           className="bg-orange-400 text-white px-4 py-2 rounded-md hover:opacity-85 border-orange-600 border"
         >
-          Add User
+          Create User
         </Link>
       </div>
       <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">

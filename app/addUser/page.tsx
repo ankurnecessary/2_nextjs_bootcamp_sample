@@ -1,15 +1,13 @@
-"use client";
 import Link from "next/link";
-import { useFormState } from "react-dom";
 import { createUser } from "./actions";
 /*
   TODO: 
   - Create a postgres database on vercel DONE
   - Register the credentials of the database created in the application via prisma. DONE
   - Creating a server component for <form /> submission. DONE
-  - Create an API to save the user. START
-  - After saving the user control will go back to user list page.
-  - At this time check whether user is actually added in the database or not.
+  - Create an API to save the user. DONE
+  - After saving the user control will go back to user list page. DONE
+  - At this time check whether user is actually added in the database or not. DONE
 
 */
 const initialState: {message:string} = { message: '' };

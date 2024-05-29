@@ -36,7 +36,7 @@ export default async function Home() {
         </thead>
         <tbody>
           {users.map((user) => (
-            <tr>
+            <tr key={user.id}>
               <td className="py-2 px-4">{user.name}</td>
               <td className="py-2 px-4">{user.age}</td>
               <td className="py-2 px-4">{user.role}</td>

@@ -41,7 +41,7 @@ export default async function Home() {
               <td className="py-2 px-4">{user.age}</td>
               <td className="py-2 px-4">{user.role}</td>
               <td className="py-2 px-4">
-                <Link href="#" className="underline text-blue-500">
+                <Link href={`/${user.id}/edit`} className="underline text-blue-500">
                   Edit
                 </Link>
               </td>

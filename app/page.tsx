@@ -1,10 +1,18 @@
+import { PrismaClient } from "@prisma/client";
 import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
+  const prisma = new PrismaClient();
+  const users = await prisma.user.findMany();
   return (
     <div className="container mx-auto p-4">
       <div className="flex flex-row-reverse mb-5">
-        <Link href='/addUser' className="bg-orange-400 text-white px-4 py-2 rounded-md hover:opacity-85 border-orange-600 border">Register here</Link>
+        <Link
+          href="/addUser"
+          className="bg-orange-400 text-white px-4 py-2 rounded-md hover:opacity-85 border-orange-600 border"
+        >
+          Register here
+        </Link>
       </div>
       <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
         <thead className="bg-gray-200">
@@ -27,20 +35,23 @@ export default function Home() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td className="py-2 px-4">John Doe</td>
-            <td className="py-2 px-4">30</td>
-            <td className="py-2 px-4">Developer</td>
-            <td className="py-2 px-4"><Link href='#' className="underline text-blue-500">Edit</Link></td>
-            <td className="py-2 px-4"><Link href='#' className="underline text-blue-500">Delete</Link></td>
-          </tr>
-          <tr>
-            <td className="py-2 px-4">Jane Smith</td>
-            <td className="py-2 px-4">25</td>
-            <td className="py-2 px-4">Designer</td>
-            <td className="py-2 px-4"><Link href='#' className="underline text-blue-500">Edit</Link></td>
-            <td className="py-2 px-4"><Link href='#' className="underline text-blue-500">Delete</Link></td>
-          </tr>
+          {users.map((user) => (
+            <tr>
+              <td className="py-2 px-4">{user.name}</td>
+              <td className="py-2 px-4">{user.age}</td>
+              <td className="py-2 px-4">{user.role}</td>
+              <td className="py-2 px-4">
+                <Link href="#" className="underline text-blue-500">
+                  Edit
+                </Link>
+              </td>
+              <td className="py-2 px-4">
+                <Link href="#" className="underline text-blue-500">
+                  Delete
+                </Link>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>

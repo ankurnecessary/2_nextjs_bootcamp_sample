@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div className="container mx-auto p-4">
       <div className="flex flex-row-reverse mb-5">
-        <Link href='/register' className="bg-orange-400 text-white px-4 py-2 rounded-md hover:opacity-85 border-orange-600 border">Register here</Link>
+        <Link href='/addUser' className="bg-orange-400 text-white px-4 py-2 rounded-md hover:opacity-85 border-orange-600 border">Register here</Link>
       </div>
       <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
         <thead className="bg-gray-200">

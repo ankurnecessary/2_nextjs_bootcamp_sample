@@ -1,15 +1,17 @@
 import Link from "next/link";
+import { FormEvent } from "react";
 /*
   TODO: 
   - Create a postgres database on vercel DONE
-  - Register the credentials of the database created in the application via prisma.
-  - Create a connection utility file if needed.
-  - Create an API to save the user.
+  - Register the credentials of the database created in the application via prisma. DONE
+  - Creating a server component for <form /> submission. DONE
+  - Create an API to save the user. START
   - After saving the user control will go back to user list page.
   - At this time check whether user is actually added in the database or not.
 
 */
 export default function register() {
+
   return (
     <div className="container max-w-md mx-auto p-4">
         <div className="mb-5 pl-5">
